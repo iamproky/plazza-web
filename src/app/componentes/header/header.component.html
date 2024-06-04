@@ -1,0 +1,26 @@
+<div>
+  <!--cabeçalho logo -->
+  <mat-toolbar class="header">
+    <div class="logo">
+      <a routerLink="/">
+        <b><span>Plazza Tênis</span></b>
+      </a>
+    </div>
+    <!-- campo de pesquisa -->
+    <div class="search-bar" *ngIf="showSearch">
+      <input type="text" placeholder="Pesquisar produtos...">
+      <mat-icon class="search-icon">search</mat-icon>
+    </div>
+    <!--icones do cabeçalho -->
+    <div class="icons">
+      <a routerLink="auth/login" class="account-icon">
+        <mat-icon>account_circle</mat-icon>
+        <span>Entrar</span>
+      </a>
+      <a routerLink="/cart" class="cart-icon">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Carrinho</span>
+      </a>
+    </div>
+  </mat-toolbar>
+</div>

@@ -1,0 +1,102 @@
+
+/* personalização do banner principal */
+.banner {
+  background-image: url('banner.png');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
+  height: 30%
+}
+
+.banner-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.banner-content h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.banner-content button {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.banner-content button:hover {
+  background-color: #555;
+}
+
+/* personalização das logos redondas */
+.shoes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.shoe-option {
+  margin: 20px;
+  text-align: center;
+}
+
+.shoe-option img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.shoe-option p {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* personalização dos produtos diversos */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product {
+  width: 30%;
+  background-color: #f9f9f9;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product h2 {
+  margin-top: 0;
+}
+
+.product p {
+  margin-bottom: 10px;
+}
+
+.add-to-cart {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+

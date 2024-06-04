@@ -1,0 +1,68 @@
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 50px; /* Ajuste o padding conforme necessário */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo a {
+  font-size: 24px;
+  color: #fff; /* Define a cor do texto para branco */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 500px; /* Define a largura máxima do campo de pesquisa */
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+.search-icon {
+  justify-content: flex-end;
+  cursor: pointer;
+  color: #333;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  margin: 10px;;
+}
+
+.icons {
+  display: flex;
+}
+
+.icons a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center; /* Alinha o ícone e o texto verticalmente */
+}
+
+.icons a span {
+  margin-left: 5px;
+}
+
+.icons a:hover {
+  background-color: #555;
+  border-radius: 50%;
+}
+
+.icons a:hover mat-icon {
+  color: #ccc;
+}

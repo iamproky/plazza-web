@@ -1,0 +1,7 @@
+<mat-card class="carrinho">
+  <h2>Meu Carrinho</h2>
+  <ul>
+    <li *ngFor="let item of items">{{ item.nome }} - R$ {{ item.preco }}</li>
+  </ul>
+  <p>Total: R$ {{ calcularTotal() }}</p>
+</mat-card>
