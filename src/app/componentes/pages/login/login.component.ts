@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { DefaultLoginLayoutComponent } from '../../default-login-layout/default-login-layout.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [RouterLink],
+  imports: [DefaultLoginLayoutComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
