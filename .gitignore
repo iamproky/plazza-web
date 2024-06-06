@@ -5,11 +5,13 @@
 /tmp
 /out-tsc
 /bazel-out
+.angular
 
 # Node
 /node_modules
 npm-debug.log
 yarn-error.log
+yarn.lock
 
 # IDEs and editors
 .idea/
@@ -40,3 +42,12 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Ignore cache created with the Angular CLI.
+.angular/
+
+# User specific ng-dev settings
+.ng-dev.user*
+
+.notes.md
+baseline.json
