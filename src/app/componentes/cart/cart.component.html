@@ -4,4 +4,7 @@
     <li *ngFor="let item of items">{{ item.nome }} - R$ {{ item.preco }}</li>
   </ul>
   <p>Total: R$ {{ calcularTotal() }}</p>
+
+  <button><a routerLink="/checkout">Checkout</a></button>
+
 </mat-card>

@@ -30,6 +30,7 @@ export class LoginComponent {
     private loginService: LoginService,
     private toastService: ToastrService
   ){
+
     this.loginForm = new FormGroup({
       email: new FormControl('',[Validators.required,Validators.email]),
       password: new FormControl('',[Validators.required,Validators.minLength(6)]),
@@ -39,11 +40,16 @@ export class LoginComponent {
   submit(){
 
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
-      next: () => this.toastService.success("Login feito com sucesso"),
+      next: () => {
+        this.toastService.success("Login feito com sucesso");
+        // Redirecionar para a página principal após o login bem-sucedido
+        this.router.navigate(['/home']);
+      },
       error: () => this.toastService.error("Erro inesperado! tente novamente")
-    })
+    });
   }
   navigate(){
     this.router.navigate(["/signup"])
   }
+
 }

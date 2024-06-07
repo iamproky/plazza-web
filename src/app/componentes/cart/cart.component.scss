@@ -14,3 +14,21 @@ ul {
 li {
   margin-bottom: 10px;
 }
+button {
+  width: 100%;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 24px;
+  cursor: pointer;
+  background-color: rgb(61, 243, 61);
+  box-shadow:0px 8px 12px rgba(148.23004603385925, 64.33935597538948, 255, 0.20000000298023224);
+  border: 1px solid rgb(54, 246, 54);
+  & a{
+    color: #000000; /* Define a cor do texto para branco */
+    text-decoration: none; /* Remove o sublinhado */
+  }
+  }
+
+
+

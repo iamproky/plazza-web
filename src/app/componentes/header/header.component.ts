@@ -6,6 +6,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIf } from '@angular/common';
 
+
 @Component({
   selector: 'app-header',
   standalone: true,
@@ -14,5 +15,7 @@ import { NgIf } from '@angular/common';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  showSearch: boolean = true;
+
+
+
 }
