@@ -12,10 +12,11 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class CartComponent implements OnInit {
 
-  items: { nome: string, preco: number }[] = [
-    { nome: 'Produto 1', preco: 20 },
-    { nome: 'Produto 2', preco: 30 },
-    { nome: 'Produto 3', preco: 15 }
+
+  items: { nome: string, preco: number, qtd: number }[] = [
+    { nome: 'Produto 1', preco: 20, qtd: 1},
+    { nome: 'Produto 2', preco: 30, qtd: 1},
+    { nome: 'Produto 3', preco: 15, qtd: 1}
   ];
 
   constructor() { }

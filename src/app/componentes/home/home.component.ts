@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
 
 interface Product {
   name: string;
@@ -11,7 +14,9 @@ interface Product {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [MatCardModule,
+    MatDividerModule,
+    MatButtonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
