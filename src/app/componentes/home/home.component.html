@@ -5,11 +5,10 @@
       <button mat-raised-button class="buttonbanner">Ver Ofertas</button>
     </div>
   </section>
-  <mat-divider></mat-divider>
-
   <!-- Seção de marcas dos tenis -->
-  <h2>Marcas famosas</h2>
-  <mat-divider></mat-divider>
+   <mat-card>
+    <mat-card-content>
+      <h2>Marcas famosas</h2>
   <div class="shoes-container">
     <div class="shoe-option">
       <img src="assets/nike.jpg" alt="Nike">
@@ -21,10 +20,11 @@
       <img src="assets/newbalance.jpg" alt="newbalance">
     </div>
   </div>
-  <mat-divider></mat-divider>
+    </mat-card-content>
+</mat-card>
 
   <!-- produtos mais vendidos -->
-  <h2>Produtos mais vendidos</h2>
+     <h2>Produtos mais vendidos</h2>
   <section class="products">
       @for (product of products; track $index) {
           <mat-card class="product">
@@ -36,7 +36,7 @@
               <button mat-raised-button class="add-to-cart">Adicionar ao Carrinho</button>
             </mat-card-content>
           </mat-card>
-
       }
   </section>
+
 

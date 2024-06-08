@@ -18,6 +18,4 @@ import {MatMenuModule} from '@angular/material/menu';
 })
 export class HeaderComponent {
 
-
-
 }
