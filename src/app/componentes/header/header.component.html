@@ -8,7 +8,7 @@
     </div>
     <!-- campo de pesquisa -->
     <div class="search-bar">
-      <input type="text" placeholder="Pesquisar produtos...">
+      <input type="text" placeholder="Pesquisar produtos..." />
       <mat-icon class="search-icon">search</mat-icon>
     </div>
     <!--icones do cabeçalho -->
@@ -18,7 +18,12 @@
         <span>Entrar</span>
       </a>
       <a routerLink="/carrinho" class="cart-icon">
-        <mat-icon matBadge="0" matBadgePosition="before" matBadgeColor="primary">shopping_cart</mat-icon>
+        <mat-icon
+          matBadge="{{ items.length }}"
+          matBadgePosition="before"
+          matBadgeColor="primary"
+          >shopping_cart</mat-icon
+        >
         <span>Carrinho</span>
       </a>
     </div>

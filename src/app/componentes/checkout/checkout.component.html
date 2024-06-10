@@ -1,2 +1,125 @@
-<p>checkout works!</p>
+<!-- Form of checkout -->
+<h2>Caixa</h2>
 
+<form class="checkout">
+  <label for="name">Nome</label>
+  <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Nome Completo"
+    required
+  />
+
+  <label for="email">Email</label>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="exemplo@email.com"
+    required
+  />
+
+  <label for="phone">Telefone</label>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    placeholder="(00) 00000-0000"
+    required
+  />
+
+  <label for="address">Endereço</label>
+  <input
+    type="text"
+    id="address"
+    name="address"
+    placeholder="Rua, Número, Bairro"
+    required
+  />
+
+  <label for="number">Número</label>
+  <input type="text" id="number" name="number" placeholder="Número" required />
+
+  <label for="complement">Complemento</label>
+  <input
+    type="text"
+    id="complement"
+    name="complement"
+    placeholder="Complemento"
+  />
+
+  <label for="city">Cidade</label>
+  <select id="city" name="city" required>
+    <option value="" disabled selected>Selecione uma cidade</option>
+    @for (city of listCities; track $index) {
+    <option value="{{ city.id }}">{{ city.nome }}</option>
+    }
+  </select>
+
+  <label for="zipCode">CEP</label>
+  <input
+    type="text"
+    id="zipCode"
+    name="zipCode"
+    placeholder="00000-000"
+    required
+  />
+
+  <label for="payment">Forma de Pagamento</label>
+  <select id="payment" name="payment" required>
+    <option value="" disabled selected>Selecione uma forma de pagamento</option>
+    <option value="credit">Cartão de Crédito</option>
+    <option value="debit">Cartão de Débito</option>
+    <option value="cash">Dinheiro</option>
+  </select>
+
+  <label for="cardNumber">Número do Cartão</label>
+  <input
+    type="text"
+    id="cardNumber"
+    name="cardNumber"
+    placeholder="0000 0000 0000 0000"
+  />
+
+  <label for="cardName">Nome no Cartão</label>
+  <input
+    type="text"
+    id="cardName"
+    name="cardName"
+    placeholder="Nome do Titular do Cartão"
+  />
+
+  <label for="cardCvv">CVV</label>
+  <input type="text" id="cardCvv" name="cardCvv" placeholder="CVV" />
+
+  <label for="cardExpiration">Data de Validade</label>
+  <input
+    type="text"
+    id="cardExpiration"
+    name="cardExpiration"
+    placeholder="MM/AA"
+  />
+
+  <label for="coupon">Cupom</label>
+  <input type="text" id="coupon" name="coupon" placeholder="Cupom" />
+
+  <div class="products">
+    <h3>Produtos</h3>
+
+    <!-- Usando o Angular 13 -->
+    @for (product of items; track $index) {
+    <div class="product">
+      <!-- <img src="{{ product.img }}" alt="{{ product.name }}" /> -->
+      <p>{{ product.nome }}</p>
+      <p>
+        {{ convertNumberToReal(product.preco) }}
+      </p>
+    </div>
+    }
+
+    <h3>Total: {{ convertNumberToReal(total) }}</h3>
+  </div>
+
+  <input type="submit" value="Finalizar Compra" />
+</form>
