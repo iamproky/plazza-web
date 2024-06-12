@@ -25,3 +25,19 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Running the server
+
+This project uses [json-server](https://github.com/typicode/json-server) to mock a REST API.
+
+To run the server, use the following command:
+
+```
+npm run server
+```
+
+or
+
+```
+yarn run server
+```
