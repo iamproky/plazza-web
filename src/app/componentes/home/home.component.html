@@ -1,42 +1,50 @@
-
+<app-header></app-header>
 <!-- Banner oferta principal -->
+
 <section class="banner">
-    <div class="banner-content">
-      <button mat-raised-button class="buttonbanner">Ver Ofertas</button>
-    </div>
-  </section>
-  <!-- Seção de marcas dos tenis -->
-   <mat-card>
-    <mat-card-content>
-      <h2>Marcas famosas</h2>
-  <div class="shoes-container">
-    <div class="shoe-option">
-      <img src="assets/nike.jpg" alt="Nike">
-    </div>
-    <div class="shoe-option">
-      <img src="assets/puma.jpg" alt="Puma">
-    </div>
-    <div class="shoe-option">
-      <img src="assets/newbalance.jpg" alt="newbalance">
-    </div>
+  <div class="banner-content">
+    <button mat-raised-button class="buttonbanner">Ver Ofertas</button>
   </div>
-    </mat-card-content>
+</section>
+<!-- Seção de marcas dos tenis -->
+<mat-card>
+  <mat-card-content>
+    <h2>Marcas famosas</h2>
+    <div class="shoes-container">
+      <div class="shoe-option">
+        <img src="assets/nike.jpg" alt="Nike" />
+      </div>
+      <div class="shoe-option">
+        <img src="assets/puma.jpg" alt="Puma" />
+      </div>
+      <div class="shoe-option">
+        <img src="assets/newbalance.jpg" alt="newbalance" />
+      </div>
+    </div>
+  </mat-card-content>
 </mat-card>
 
-  <!-- produtos mais vendidos -->
-     <h2>Produtos mais vendidos</h2>
-  <section class="products">
-      @for (product of products; track $index) {
-          <mat-card class="product">
-            <mat-card-content>
-              <h2>{{ product.name }}<strong>{{product.bestSeller? " 🔥 Mais vendido": ""}}</strong></h2>
-              <img src={{product.img}} alt="">
-              <p>Preço: R$ {{ product.price }}</p>
-              <p>Informações adicionais sobre {{ product.name }}.</p>
-              <button mat-raised-button class="add-to-cart">Adicionar ao Carrinho</button>
-            </mat-card-content>
-          </mat-card>
-      }
-  </section>
-
-
+<!-- produtos mais vendidos -->
+<h2>Produtos mais vendidos</h2>
+<section class="products">
+  @for (product of products; track $index) {
+  <mat-card class="product">
+    <mat-card-content>
+      <h2>
+        {{ product.name
+        }}<strong>{{ product.bestSeller ? " 🔥 Mais vendido" : "" }}</strong>
+      </h2>
+      <img src="{{ product.img }}" alt="" />
+      <p>Preço: R$ {{ product.price }}</p>
+      <p>Informações adicionais sobre {{ product.name }}.</p>
+      <button
+        mat-raised-button
+        class="add-to-cart"
+        (click)="addToCart(product)"
+      >
+        Adicionar ao Carrinho
+      </button>
+    </mat-card-content>
+  </mat-card>
+  }
+</section>

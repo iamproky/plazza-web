@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DefaultLoginLayoutComponent } from '../default-login-layout/default-login-layout.component';
+import { ProductService } from '../../services/product.service';
+import { Cart } from '../../types/cart';
 
 interface IBGE {
   id: number;
@@ -11,21 +12,30 @@ interface IBGE {
   standalone: true,
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss',
-  imports: [DefaultLoginLayoutComponent],
+  imports: [],
 })
 export class CheckoutComponent {
   // Cidades
   listCities: IBGE[] = [];
 
   // Produtos
-  items: { nome: string; preco: number; qtd: number }[] = [
-    { nome: 'Produto 1', preco: 20, qtd: 1 },
-    { nome: 'Produto 2', preco: 30, qtd: 1 },
-    { nome: 'Produto 3', preco: 15, qtd: 1 },
-  ];
+  items: Cart = [];
+
   total: number = 0;
 
-  constructor() {}
+  constructor(private productService: ProductService) {
+    this.getCart();
+  }
+
+  getCart() {
+    this.productService
+      .getCart()
+      .subscribe((cartItem) => (this.items = cartItem));
+  }
+
+  calcularTotal(): number {
+    return this.items.reduce((total, item) => total + item.price, 0);
+  }
 
   ngOnInit() {
     // Coletando municípios do IBGE de Goiás
@@ -37,12 +47,6 @@ export class CheckoutComponent {
       .then((data) => {
         this.listCities = data;
       });
-
-    // Calculando o total dos produtos
-    this.total = this.items.reduce(
-      (total, product) => total + product.preco,
-      0
-    );
   }
 
   convertNumberToReal(number: number) {

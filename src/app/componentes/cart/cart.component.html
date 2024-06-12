@@ -1,11 +1,22 @@
-<mat-card class="carrinho">
-  <h2>Meu Carrinho</h2>
-  <ul>
-    <li *ngFor="let item of items">
-      {{ item.nome }} - R$ {{ item.preco }} - QTD: {{ item.qtd }}
-    </li>
-  </ul>
-  <p>Total: R$ {{ calcularTotal() }}</p>
+<main
+  style="
+    min-height: 90vh;
+    max-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <mat-card class="carrinho">
+    <h2>Meu Carrinho</h2>
+    <ul>
+      @for (item of items; track $index) {
 
-  <button><a routerLink="/checkout">Checkout</a></button>
-</mat-card>
+      <li>{{ item.name }} - R$ {{ item.price }} - QTD: {{ item.quantity }}</li>
+      }
+    </ul>
+    <p>Total: R$ {{ calcularTotal() }}</p>
+
+    <a routerLink="/checkout"><button>Checkout</button></a>
+  </mat-card>
+</main>

@@ -1,7 +1,9 @@
 import { MatCardModule } from '@angular/material/card';
-import { Component, OnInit } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
-import { Router, RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { NgFor } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { Cart } from '../../types/cart';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-cart',
@@ -10,20 +12,21 @@ import { Router, RouterLink } from '@angular/router';
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
 })
-export class CartComponent implements OnInit {
-  items: { nome: string; preco: number; qtd: number }[] = [
-    { nome: 'Produto 1', preco: 20, qtd: 1 },
-    { nome: 'Produto 2', preco: 30, qtd: 1 },
-    { nome: 'Produto 3', preco: 15, qtd: 1 },
-  ];
-
+export class CartComponent {
   total: number = 0;
+  items: Cart = [];
 
-  constructor() {}
+  constructor(private productService: ProductService) {
+    this.getCart();
+  }
 
-  ngOnInit(): void {}
+  getCart() {
+    this.productService
+      .getCart()
+      .subscribe((cartItem) => (this.items = cartItem));
+  }
 
   calcularTotal(): number {
-    return this.items.reduce((total, item) => total + item.preco, 0);
+    return this.items.reduce((total, item) => total + item.price, 0);
   }
 }

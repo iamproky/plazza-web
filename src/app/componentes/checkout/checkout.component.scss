@@ -1,9 +1,13 @@
 // Styles of checkout
+.checkout-container {
+  padding: 1.4rem;
+}
+
 .checkout {
   display: grid;
   grid-template-columns: 15% 85%;
-  grid-gap: 20px;
-  padding: 20px;
+  grid-gap: 1.1rem;
+  padding: 0.4rem 1.1rem;
 }
 
 h2 {
@@ -48,14 +52,6 @@ h2 {
 .checkout label {
   font-weight: bold;
   margin-bottom: 8px;
-  text-align: start;
-}
-
-.checkout select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 951%;
   text-align: start;
 }
 

@@ -52,3 +52,6 @@ Thumbs.db
 .notes.md
 baseline.json
 bun.lockb
+
+# Environment
+src/environments/environment.development.ts
