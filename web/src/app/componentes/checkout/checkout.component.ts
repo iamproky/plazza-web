@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Cart } from '../../types/cart';
+import { HeaderComponent } from '../header-without-search/header.component';
 
 interface IBGE {
   id: number;
@@ -12,7 +13,7 @@ interface IBGE {
   standalone: true,
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.scss',
-  imports: [],
+  imports: [HeaderComponent],
 })
 export class CheckoutComponent {
   // Cidades

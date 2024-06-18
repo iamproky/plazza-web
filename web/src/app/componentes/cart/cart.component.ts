@@ -4,13 +4,14 @@ import { NgFor } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Cart } from '../../types/cart';
 import { ProductService } from '../../services/product.service';
+import { HeaderComponent } from '../header-without-search/header.component';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [MatCardModule, NgFor, RouterLink],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
+  imports: [MatCardModule, NgFor, RouterLink, HeaderComponent],
 })
 export class CartComponent {
   total: number = 0;
