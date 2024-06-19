@@ -1,5 +1,4 @@
 export interface ItemCart {
-  name: string;
   price: number;
   productID: string;
   quantity: number;

@@ -13,7 +13,7 @@
     <ul>
       @for (item of items; track $index) {
 
-      <li>{{ item.name }} - R$ {{ item.price }} - QTD: {{ item.quantity }}</li>
+      <li>{{ item.productID }} - R$ {{ item.price }} - QTD: {{ item.quantity }}</li>
       }
     </ul>
     <p>Total: R$ {{ calcularTotal() }}</p>

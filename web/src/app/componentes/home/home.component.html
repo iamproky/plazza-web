@@ -31,17 +31,12 @@
   <mat-card class="product">
     <mat-card-content>
       <h2>
-        {{ product.name
-        }}<strong>{{ product.bestSeller ? " 🔥 Mais vendido" : "" }}</strong>
+        {{ product.name }}
       </h2>
-      <img src="{{ product.img }}" alt="" />
+      <!-- <img src="{{ product. }}" alt="" /> -->
       <p>Preço: R$ {{ product.price }}</p>
       <p>Informações adicionais sobre {{ product.name }}.</p>
-      <button
-        mat-raised-button
-        class="add-to-cart"
-        (click)="addToCart(product)"
-      >
+      <button mat-raised-button class="add-to-cart">
         Adicionar ao Carrinho
       </button>
     </mat-card-content>

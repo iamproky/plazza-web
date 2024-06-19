@@ -13,7 +13,7 @@ export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
   getProducts() {
-    return this.httpClient.get<Products>(this.url + '/products');
+    return this.httpClient.get<Products>(this.url + '/product');
   }
 
   getCart() {

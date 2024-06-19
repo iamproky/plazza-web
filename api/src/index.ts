@@ -3,9 +3,12 @@ import { productRoutes } from "./functions/productRoutes";
 import { userRoutes } from "./functions/userRoutes";
 import { cartRoutes } from "./functions/cartRoutes";
 import swagger from "@elysiajs/swagger";
+import { cors } from '@elysiajs/cors'
+
 
 const app = new Elysia()
   .use(swagger({path: '/'}))
+  .use(cors())
   .use(cartRoutes)
   .use(productRoutes)
   .use(userRoutes)

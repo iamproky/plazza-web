@@ -4,6 +4,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { ProductService } from '../../services/product.service';
 import { HeaderComponent } from '../header/header.component';
+import { Products } from '../../types/product';
 
 interface Product {
   name: string;
@@ -21,13 +22,13 @@ interface Product {
   imports: [MatCardModule, MatDividerModule, MatButtonModule, HeaderComponent],
 })
 export class HomeComponent {
-  addToCart(product: Product) {
+  /*addToCart(product: Product) {
     this.productService
       .addProductToCart(product)
       .subscribe((_) => this.getProductsCreated());
-  }
+  }*/
 
-  products: Product[] = [];
+  products: Products = [];
   constructor(private productService: ProductService) {
     this.getProductsCreated();
   }
