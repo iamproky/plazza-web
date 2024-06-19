@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment';
 import { Product, Products } from '../types/product';
 import { Cart, ItemCart } from '../types/cart';
 
+// TODO: adicionar produto ao carrinho conforme a rota POST /cart 
 @Injectable({
   providedIn: 'root',
 })

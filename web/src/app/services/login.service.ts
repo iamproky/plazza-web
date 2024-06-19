@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root',
 })
+// TODO: fazer login funcionar seguindo a rota POST /login: http://localhost:3000/
 export class LoginService {
   constructor(private httpClient: HttpClient) {}
 
@@ -20,9 +21,10 @@ export class LoginService {
         })
       );
   }
+
   signup(name: string, email: string, password: string) {
     return this.httpClient
-      .post<LoginResponse>(environment.api_url + '/register', {
+      .post<LoginResponse>(environment.api_url + '/signup', {
         name,
         email,
         password,
@@ -35,3 +37,4 @@ export class LoginService {
       );
   }
 }
+

@@ -21,7 +21,7 @@ export const userRoutes = new Elysia()
     }
   )
   .post(
-    "/signIn",
+    "/signup",
     async ({ body, set }) => {
       const { email, name, password } = body;
       const user = await prisma.user.create({
@@ -32,6 +32,7 @@ export const userRoutes = new Elysia()
         },
         select: {
           id: true,
+          name: true,
         },
       });
 
