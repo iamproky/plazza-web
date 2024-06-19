@@ -3,7 +3,7 @@ import { DefaultLoginLayoutComponent } from '../../default-login-layout/default-
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInputComponent } from '../../primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../../services/login.service';
+import { AuthService } from '../../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 
 interface signupForm{
@@ -20,7 +20,7 @@ interface signupForm{
     PrimaryInputComponent
   ],
   providers: [
-    LoginService
+    AuthService
   ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
@@ -30,7 +30,7 @@ export class SignupComponent {
 
   constructor(
     private router: Router,
-    private loginService: LoginService,
+    private authService: AuthService,
     private toastService: ToastrService
   ){
     this.signupForm = new FormGroup({
@@ -42,10 +42,15 @@ export class SignupComponent {
   }
 
   submit(){
-    this.loginService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
-      next: () => this.toastService.success("Registrado com Sucesso!"),
-      error: () => this.toastService.error("Erro inesperado! Tente novamente mais tarde")
-    })
+    this.authService.signup(this.signupForm.value.name, this.signupForm.value.email, this.signupForm.value.password).subscribe({
+      next: () => {
+        this.toastService.success('Registrado com sucesso');
+        // Redirecionar para a página principal após registro com sucesso
+        this.router.navigate(['/']).then(()=> {window.location.reload()});
+      },
+      error: () =>
+        this.toastService.error('Erro inesperado! tente novamente'),
+    });
   }
 
   navigate(){

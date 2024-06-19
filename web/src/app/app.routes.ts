@@ -11,7 +11,7 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'produtos', component: ProductdetailsComponent },
-  { path: 'carrinho', component: CartComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'produtodetails', component: ProductdetailsComponent },
   { path: 'checkout', component: CheckoutComponent},
   { path: '', redirectTo: '/home', pathMatch: 'full' },

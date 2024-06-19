@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { PrimaryInputComponent } from '../../primary-input/primary-input.component';
 import { Router } from '@angular/router';
-import { LoginService } from '../../../services/login.service';
+import { AuthService } from '../../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { HeaderComponent } from '../../header-without-search/header.component';
 interface LoginForm {
@@ -18,7 +18,7 @@ interface LoginForm {
 @Component({
   selector: 'app-login',
   standalone: true,
-  providers: [LoginService],
+  providers: [AuthService],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
   imports: [
@@ -33,7 +33,7 @@ export class LoginComponent {
 
   constructor(
     private router: Router,
-    private loginService: LoginService,
+    private authService: AuthService,
     private toastService: ToastrService
   ) {
     this.loginForm = new FormGroup({
@@ -45,16 +45,16 @@ export class LoginComponent {
     });
   }
   submit() {
-    this.loginService
+    this.authService
       .login(this.loginForm.value.email, this.loginForm.value.password)
       .subscribe({
         next: () => {
           this.toastService.success('Login feito com sucesso');
           // Redirecionar para a página principal após o login bem-sucedido
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']).then(()=> {window.location.reload()})
         },
         error: () =>
-          this.toastService.error('Erro inesperado! tente novamente'),
+          this.toastService.error('Erro Login ou Senha incorretos'),
       });
   }
   navigate() {
