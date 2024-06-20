@@ -4,7 +4,7 @@
   "scripts": {
     "test": "bun test",
     "bun:install": "npm install -g bun",
-    "postinstall": "prisma migrate deploy && prisma generate && bun run --watch src/index.ts",
+    "postinstall": "prisma generate && bun run --watch src/index.ts",
     "dev": "bun run --watch src/index.ts"
   },
   "dependencies": {
