@@ -32,6 +32,7 @@ export class AuthService {
       .pipe(
         tap(response => {
           sessionStorage.setItem('username', response.name);
+          sessionStorage.setItem('idUser', response.id);
           this.currentUserSubject.next(response.name);
         })
       );
@@ -42,6 +43,7 @@ export class AuthService {
       .pipe(
         tap(response => {
           sessionStorage.setItem('username', response.name);
+          sessionStorage.setItem('idUser', response.id);
           this.currentUserSubject.next(response.name);
         })
       );

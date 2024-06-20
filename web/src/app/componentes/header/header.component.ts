@@ -8,6 +8,8 @@ import { NgIf } from '@angular/common';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthService } from '../../services/auth.service';
+import { Cart } from '../../types/cart';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-header',
@@ -27,13 +29,18 @@ import { AuthService } from '../../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
   currentUser: string | null = null;
-  items: { nome: string; preco: number; qtd: number }[] = [
-    { nome: 'Produto 1', preco: 20, qtd: 1 },
-    { nome: 'Produto 2', preco: 30, qtd: 1 },
-    { nome: 'Produto 3', preco: 15, qtd: 1 },
-  ];
+  items: Cart = [];
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private productService: ProductService) {
+    this.getCart()
+  }
+
+  getCart() {
+    this.productService
+      .getCart()
+      .subscribe((cartItem) => (this.items = cartItem));
+  }
+
 
   ngOnInit() {
     this.authService.currentUser.subscribe(user => {
@@ -46,4 +53,3 @@ export class HeaderComponent implements OnInit {
   }
 
 }
-

@@ -21,7 +21,7 @@
       <!-- <img src="{{ product. }}" alt="" /> -->
       <p>Preço: R$ {{ product.price }}</p>
       <p>Tamanho: {{ product.size }}</p>
-      <button mat-raised-button class="add-to-cart">
+      <button mat-raised-button class="add-to-cart" (click)="addToCart(product)">
         Adicionar ao Carrinho
       </button>
     </mat-card-content>

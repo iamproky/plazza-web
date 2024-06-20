@@ -27,7 +27,7 @@
       </ng-template>
       <a routerLink="/carrinho" class="cart-icon">
         <mat-icon
-          matBadge="5"
+          matBadge="{{ items.length }}"
           matBadgePosition="before"
           matBadgeColor="primary"
         >shopping_cart</mat-icon>

@@ -10,6 +10,7 @@ import { Cart, ItemCart } from '../types/cart';
 })
 export class ProductService {
   private url = environment.api_url;
+  idUser = sessionStorage.getItem('idUser');
 
   constructor(private httpClient: HttpClient) {}
 
@@ -18,23 +19,16 @@ export class ProductService {
   }
 
   getCart() {
-    return this.httpClient.get<Cart>(this.url + '/cart');
+    return this.httpClient.get<Cart>(this.url + '/cart/' + this.idUser );
   }
 
   addProductToCart(product: Product) {
     return this.httpClient.post<ItemCart>(
-      this.url + '/cart',
+      this.url + '/cart/' + this.idUser,
       {
-        name: product.name,
-        price: product.price,
-        productID: product.id,
+        product: product.id,
         quantity: 1,
       },
-      {
-        headers: {
-          Authorization: localStorage.getItem('token')!,
-        },
-      }
     );
   }
 }
