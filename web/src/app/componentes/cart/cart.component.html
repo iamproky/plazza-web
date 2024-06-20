@@ -8,16 +8,21 @@
     align-items: center;
   "
 >
-  <mat-card class="carrinho">
-    <h2>Meu Carrinho</h2>
-    <ul>
-      @for (item of items; track $index) {
-
+<mat-card class="carrinho">
+  <mat-card-header><h2>Meu carrinho</h2></mat-card-header>
+  <mat-divider></mat-divider>
+  <mat-card-subtitle><h4>Lista de produtos: </h4></mat-card-subtitle>
+  <ul>
+    @for (item of items; track $index) {
+    <mat-card class="item-carrinho">
       <li>{{ item.name }} - R$ {{ item.price }} - QTD: {{ item.quantity }}</li>
-      }
-    </ul>
-    <p>Total: R$ {{ calcularTotal() }}</p>
 
-    <a routerLink="/checkout"><button>Checkout</button></a>
-  </mat-card>
-</main>
+    </mat-card>
+    }
+  </ul>
+  <mat-divider></mat-divider>
+  <h3><p>Total: R$ {{ calcularTotal() }}</p></h3>
+
+  <a routerLink="/checkout"><button class="checkout">Checkout</button></a>
+</mat-card>
+

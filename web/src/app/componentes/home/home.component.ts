@@ -5,7 +5,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { ProductService } from '../../services/product.service';
 import { HeaderComponent } from '../header/header.component';
 import { Product, Products } from '../../types/product';
-
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -14,14 +14,17 @@ import { Product, Products } from '../../types/product';
   imports: [MatCardModule, MatDividerModule, MatButtonModule, HeaderComponent],
 })
 export class HomeComponent {
+
   addToCart(product: Product) {
     this.productService
       .addProductToCart(product)
       .subscribe((_) => this.getProductsCreated());
+      this.toastService.success('Item adicionado ao carrinho');
+
   }
 
   products: Products = [];
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,private toastService: ToastrService) {
     this.getProductsCreated();
   }
 

@@ -5,13 +5,14 @@ import { RouterLink } from '@angular/router';
 import { Cart } from '../../types/cart';
 import { ProductService } from '../../services/product.service';
 import { HeaderComponent } from '../header-without-search/header.component';
+import { MatDivider } from '@angular/material/divider';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
-  imports: [MatCardModule, NgFor, RouterLink, HeaderComponent],
+  imports: [MatCardModule, NgFor, RouterLink, HeaderComponent,MatDivider],
 })
 export class CartComponent {
   total: number = 0;
